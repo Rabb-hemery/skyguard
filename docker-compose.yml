@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: skyguard_db
+    environment:
+      POSTGRES_DB: skyguard
+      POSTGRES_USER: skyguard
+      POSTGRES_PASSWORD: skyguard
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
