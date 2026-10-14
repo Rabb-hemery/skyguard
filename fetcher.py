@@ -99,7 +99,7 @@ def save_approaches(approaches):
         if should_alert(dist_km, diameter):
             alerts.append(
                 f"! ALERTE : {name} passe à {dist_km:,.0f} km le {obj['cd']}"
-                f" (diamètre : {diameter or 'inconnu'} km, vitesse : {v_rel} km/s)"
+                f" (diamètre : {diameter if diameter else 'inconnu'}, vitesse : {v_rel} km/s)"
             )
 
     conn.commit()
